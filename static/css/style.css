@@ -1,0 +1,12 @@
+
+body:dir(rtl) {
+  direction: rtl;
+  text-align: right;
+  /* Add other RTL-specific styles as needed */
+}
+
+body:dir(ltr) {
+  direction: ltr;
+  text-align: left;
+  /* Add other LTR-specific styles as needed */
+}
