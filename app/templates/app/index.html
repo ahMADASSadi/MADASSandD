@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% load i18n %} {% load static %} {% block title %}
+{%trans 'HomePage' %} {%endblock title%} {% block index_html %}
+
+<body class="bg-gray-50 text-gray-800 font-roboto">
+  {% include 'app/about.html' %}
+  
+  {% include 'app/projects.html' %}
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white text-center">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-gray-800">
+        {% trans "Get in Touch" %}
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        {% trans "Feel free to reach out to me for collaborations or any!" %}
+        {%trans " questions" %}
+      </p>
+      <a
+        href="mailto:example@example.com"
+        class="mt-6 inline-block bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700"
+        >{% trans "Contact Me" %}</a
+      >
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-500 py-6 text-center text-white">
+    <p>&copy; 2024 ahMADASSadi. {% trans "All rights reserved." %}</p>
+  </footer>
+
+  {% endblock index_html %}
+</body>

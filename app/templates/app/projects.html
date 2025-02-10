@@ -1,0 +1,33 @@
+{% load static %} {% load i18n %}
+
+<section id="projects" class="bg-gray-100 py-20">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold text-gray-800">
+      {% trans "My Projects" %}
+    </h2>
+    <p class="mt-4 text-lg text-gray-600">
+      {% trans "Here are some of the projects I've worked on:" %}
+    </p>
+  </div>
+
+  <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-8 m-2">
+    {% if repos %} {% for repo in repos %}
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h3 class="text-xl font-bold text-gray-800">
+        <a href="{{ repo.url }}" target="_blank">{{ repo.name }}</a>
+      </h3>
+      <p class="mt-2 text-gray-600">
+        {% blocktrans with description=repo.description %}
+        {{ description }}
+      {% endblocktrans %}      </p>
+      <a
+        href="{{ repo.url }}""
+        class="mt-4 inline-block bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700"
+        >{% trans "View on GitHub" %}</a
+      >
+    </div>
+    {% endfor %} {% else %}
+    <p class="text-gray-600">{% trans "No repositories found." %}</p>
+    {% endif %}
+  </div>
+</section>

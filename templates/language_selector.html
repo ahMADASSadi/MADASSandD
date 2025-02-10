@@ -1,0 +1,57 @@
+{% load static %} {% load i18n %}
+
+<div class='bg-blue-100' style="padding: 5px; text-align: right">
+  <form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    <div>
+      <div class="custom-dropdown">
+        <div class="selected-option">🇺🇸</div>
+        <div class="dropdown-options">
+          <div class="option" data-value="en-us">🇺🇸</div>
+          <div class="option" data-value="fr-FR">🇫🇷</div>
+          <div class="option" data-value="fa">
+            <img
+              src="https://flagofiran.com/files/flag-of-iran-emoji-android.png"
+              width="20"
+              alt="Iran Flag"
+            />
+          </div>
+        </div>
+        <input type="hidden" name="language" id="language" value="en-us" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.querySelector(".custom-dropdown");
+    const selectedOption = dropdown.querySelector(".selected-option");
+    const options = dropdown.querySelector(".dropdown-options");
+    const hiddenInput = dropdown.querySelector("input[name='language']");
+    const form = dropdown.closest("form");
+
+    // Toggle dropdown visibility when clicking on the selected option.
+    selectedOption.addEventListener("click", function () {
+      options.style.display =
+        options.style.display === "block" ? "none" : "block";
+    });
+
+    // When an option is clicked, update the selected value, hide the dropdown, and submit the form.
+    options.querySelectorAll(".option").forEach((option) => {
+      option.addEventListener("click", function () {
+        selectedOption.innerHTML = option.innerHTML;
+        hiddenInput.value = option.getAttribute("data-value");
+        options.style.display = "none";
+        form.submit();
+      });
+    });
+
+    // Hide dropdown if clicking outside.
+    document.addEventListener("click", function (event) {
+      if (!dropdown.contains(event.target)) {
+        options.style.display = "none";
+      }
+    });
+  });
+</script>
