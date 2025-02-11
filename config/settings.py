@@ -17,7 +17,7 @@ GITHUB_TOKEN = env.get_value("PORTFOLIO_GITHUB_KEY")
 
 DEBUG = env.get_value("PORTFOLIO_DEBUG")
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','.vercel.app']
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -29,7 +29,7 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
-    'app.apps.AppConfig',
+    'app',
 ]
 
 THIRD_PARTY_APPS = []
