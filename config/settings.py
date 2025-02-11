@@ -17,7 +17,7 @@ GITHUB_TOKEN = env.get_value("PORTFOLIO_GITHUB_KEY")
 
 DEBUG = env.get_value("PORTFOLIO_DEBUG")
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','.vercel.app']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app']
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -121,6 +121,8 @@ LANG_INFO['fa'] = {
 STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'static'
+
+STATICFILES_DIRS = [BASE_DIR/'static',]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
