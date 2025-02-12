@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-10 17:03+0000\n"
+"POT-Creation-Date: 2025-02-12 11:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,25 +22,27 @@ msgstr ""
 msgid "Welcome to My Portfolio"
 msgstr "به سایت من خوش آمدید"
 
-#: app/templates/app/about.html:15
+#: app/templates/app/about.html:17
 msgid ""
 " Hi there! I'm Ahmad Asadi, a passionate developer\n"
-"        and open-source \"enthusiast\". "
+"        and open-source enthusiast. "
 msgstr "سام بلک. من احمدم، اسدی. کد زدنو خیلی دوست دارم مخصوصا اوپن سورسشو :)"
 
-#: app/templates/app/about.html:21
+#: app/templates/app/about.html:23
 msgid "Check out my GitHub"
-msgstr "گیت من اینجاست"
+msgstr "گیتم اینجاست"
 
-#: app/templates/app/about.html:27
+#: app/templates/app/about.html:31
 msgid "About Me"
-msgstr "درباره من"
+msgstr "دربارم"
 
-#: app/templates/app/about.html:29
+#: app/templates/app/about.html:33
 msgid ""
-" I am a passionate developer who enjoys creating\n"
-"        solutions that help people. I specialize in web development, using\n"
-"        frameworks like Django and React. "
+" I am a passionate developer who enjoys creating solutions\n"
+"      that help people. I specialize in web development, using frameworks "
+"like\n"
+"      Django and FastAPI.Also, I luv machine learning and deeeeeeeeeep "
+"learning.  "
 msgstr ""
 "خیلی برای کد زدن و چالش‌های جدید مشتاقم. بیشتر با جنگو و فست برای ساختن API "
 "استفاده کردم. در ضمن اینم بگم که عاشق یادگیری ماشین و یادگیری عمیقم;خیلی "
@@ -50,50 +52,59 @@ msgstr ""
 msgid "HomePage"
 msgstr "صفحه اصلی"
 
-#: app/templates/app/index.html:11
-msgid "My Projects"
-msgstr "پروژه‌های من"
-
 #: app/templates/app/index.html:14
-msgid "Here are some of the projects I've worked on:"
-msgstr "یه سری از پروژه‌هام این زیره"
-
-#: app/templates/app/index.html:24
 msgid "Get in Touch"
 msgstr "زنگم بزن"
 
+#: app/templates/app/index.html:16
+msgid ""
+" \"Feel free to reach out to me for collaborations or any\n"
+"        questions!\" "
+msgstr "میتونی برای اشنای، کار یا هر چیز دیگه‌ای باهام در تماس باشی"
+
+#: app/templates/app/index.html:22
+msgid "Email Me"
+msgstr "ایمیلم کن"
+
 #: app/templates/app/index.html:27
-msgid "Feel free to reach out to me for collaborations or any!"
-msgstr ""
+msgid "Telegram Me"
+msgstr "تلگرامم کن"
 
-#: app/templates/app/index.html:28
-msgid " questions"
-msgstr ""
-
-#: app/templates/app/index.html:33
-msgid "Contact Me"
-msgstr "تاماس با من"
-
-#: app/templates/app/index.html:40
+#: app/templates/app/index.html:34
 msgid "All rights reserved."
 msgstr "کل حقوق مال همست. لذتشم همینه =)"
 
 #: app/templates/app/projects.html:5
-msgid "My GitHub Repositories"
-msgstr "ریپو‌های من"
+msgid "My Projects"
+msgstr "پروژه‌هام"
 
-#: app/templates/app/projects.html:14
+#: app/templates/app/projects.html:7
+msgid "Here are some of the projects I've worked on:"
+msgstr "یه سری از پروژه‌هام این زیره"
+
+#: app/templates/app/projects.html:22
 #, python-format
-msgid ""
-"\n"
-"        %(description)s\n"
-"      "
+msgid " %(description)s "
 msgstr ""
 
-#: app/templates/app/projects.html:20
+#: app/templates/app/projects.html:27
 msgid "View on GitHub"
-msgstr ""
+msgstr "برو به گیتش"
 
-#: app/templates/app/projects.html:24
+#: app/templates/app/projects.html:31
 msgid "No repositories found."
-msgstr ""
+msgstr "ریپویی پیدا نشد"
+
+#: app/templates/app/skills.html:4
+msgid "My Skills"
+msgstr "ابزارهام"
+
+#: app/templates/app/skills.html:5
+msgid "Technologies I specialize in:"
+msgstr "تکنولوژی‌هایی که باهاشون کار میکنم"
+
+#~ msgid "Contact Me"
+#~ msgstr "تاماس با من"
+
+#~ msgid "My GitHub Repositories"
+#~ msgstr "ریپو‌های من"

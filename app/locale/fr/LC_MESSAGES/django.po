@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-10 17:03+0000\n"
+"POT-Creation-Date: 2025-02-12 11:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,77 +20,94 @@ msgstr ""
 
 #: app/templates/app/about.html:11
 msgid "Welcome to My Portfolio"
-msgstr ""
+msgstr "Bienvenue sur mon portfolio"
 
-#: app/templates/app/about.html:15
+#: app/templates/app/about.html:17
 msgid ""
 " Hi there! I'm Ahmad Asadi, a passionate developer\n"
-"        and open-source \"enthusiast\". "
+"        and open-source enthusiast. "
 msgstr ""
+" Bonjour ! Je suis Ahmad Asadi, un développeur passionné\n"
+"        et un amateur de logiciels open-source. "
 
-#: app/templates/app/about.html:21
+#: app/templates/app/about.html:23
 msgid "Check out my GitHub"
-msgstr ""
+msgstr "Découvrez mon GitHub"
 
-#: app/templates/app/about.html:27
+#: app/templates/app/about.html:31
 msgid "About Me"
-msgstr ""
+msgstr "À propos de moi"
 
-#: app/templates/app/about.html:29
+#: app/templates/app/about.html:33
 msgid ""
-" I am a passionate developer who enjoys creating\n"
-"        solutions that help people. I specialize in web development, using\n"
-"        frameworks like Django and React. "
+" I am a passionate developer who enjoys creating solutions\n"
+"      that help people. I specialize in web development, using frameworks "
+"like\n"
+"      Django and FastAPI.Also, I luv machine learning and deeeeeeeeeep "
+"learning.  "
 msgstr ""
+" Je suis un développeur passionné qui aime créer des solutions\n"
+"      qui aident les gens. Je me spécialise dans le développement web, "
+"utilisant des frameworks comme\n"
+"      Django et FastAPI. J'adore aussi l'apprentissage automatique et le "
+"deep learning.  "
 
 #: app/templates/app/index.html:2
 msgid "HomePage"
-msgstr ""
-
-#: app/templates/app/index.html:11
-msgid "My Projects"
-msgstr ""
+msgstr "Page d'accueil"
 
 #: app/templates/app/index.html:14
-msgid "Here are some of the projects I've worked on:"
-msgstr ""
-
-#: app/templates/app/index.html:24
 msgid "Get in Touch"
+msgstr "Contactez-moi"
+
+#: app/templates/app/index.html:16
+msgid ""
+" \"Feel free to reach out to me for collaborations or any\n"
+"        questions!\" "
+msgstr ""
+" \"N'hésitez pas à me contacter pour des collaborations ou toute\n"
+"        question !\" "
+
+#: app/templates/app/index.html:22
+msgid "Email Me"
 msgstr ""
 
 #: app/templates/app/index.html:27
-msgid "Feel free to reach out to me for collaborations or any!"
+msgid "Telegram Me"
 msgstr ""
 
-#: app/templates/app/index.html:28
-msgid " questions"
-msgstr ""
-
-#: app/templates/app/index.html:33
-msgid "Contact Me"
-msgstr ""
-
-#: app/templates/app/index.html:40
+#: app/templates/app/index.html:34
 msgid "All rights reserved."
-msgstr ""
+msgstr "Tous droits réservés."
 
 #: app/templates/app/projects.html:5
-msgid "My GitHub Repositories"
-msgstr ""
+msgid "My Projects"
+msgstr "Mes projets"
 
-#: app/templates/app/projects.html:14
+#: app/templates/app/projects.html:7
+msgid "Here are some of the projects I've worked on:"
+msgstr "Voici quelques-uns des projets sur lesquels j'ai travaillé :"
+
+#: app/templates/app/projects.html:22
 #, python-format
-msgid ""
-"\n"
-"        %(description)s\n"
-"      "
-msgstr ""
+msgid " %(description)s "
+msgstr " %(description)s "
 
-#: app/templates/app/projects.html:20
+#: app/templates/app/projects.html:27
 msgid "View on GitHub"
+msgstr "Voir sur GitHub"
+
+#: app/templates/app/projects.html:31
+msgid "No repositories found."
+msgstr "Aucun dépôt trouvé."
+
+#: app/templates/app/skills.html:4
+msgid "My Skills"
 msgstr ""
 
-#: app/templates/app/projects.html:24
-msgid "No repositories found."
+#: app/templates/app/skills.html:5
+msgid "Technologies I specialize in:"
 msgstr ""
+
+#~ msgid "Contact Me"
+#~ msgstr "Contactez-moi"
