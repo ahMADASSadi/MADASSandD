@@ -1,35 +1,38 @@
 {% load i18n %} {% load static %}
-
-<section class="bg-blue-100 py-20 text-center">
-    <div class="container mx-auto">
+<section class="bg-gray-900 py-20 text-center text-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-lg mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
       <img
-        class="inline-block w-28 h-28 rounded-full object-cover drop-shadow-lg "
-        src="{{user_info.avatar_url}}"
+        class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-gray-700 shadow-md"
+        src="{{ user_info.avatar_url }}"
         alt="Profile Picture"
       />
-      <h1 class="text-5xl font-bold text-gray-800">
+      <h1 class="text-4xl font-extrabold mt-4">
         {% trans "Welcome to My Portfolio" %}
       </h1>
-      <h2 class="text-2xl font-bold text-gray-800">{{ user_info.bio }}</h2>
-      <p class="mt-4 text-lg text-gray-600">
+      <h2 class="text-xl font-semibold text-gray-400 mt-2">
+        {{ user_info.bio }}
+      </h2>
+      <p class="mt-4 text-lg text-gray-300">
         {% blocktranslate %} Hi there! I'm Ahmad Asadi, a passionate developer
-        and open-source "enthusiast". {% endblocktranslate %}
+        and open-source enthusiast. {% endblocktranslate %}
       </p>
       <a
-        href="{{ user_info.html_url }}' %}"
-        class="mt-6 inline-block bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition"
+        href="{{ user_info.html_url }}"
+        class="mt-6 inline-block bg-gray-700 text-white py-3 px-8 rounded-lg shadow-md hover:bg-gray-600 transition duration-300"
         >{% trans "Check out my GitHub" %}</a
       >
     </div>
-  </section>
-  <section id="about" class="py-20 bg-white">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-gray-800">{% trans "About Me" %}</h2>
-      <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-        {% blocktrans %} I am a passionate developer who enjoys creating
-        solutions that help people. I specialize in web development, using
-        frameworks like Django and React. {% endblocktrans %}
-      </p>
-      
-    </div>
-  </section>
+  </div>
+</section>
+
+<section id="about" class="py-20 bg-gray-800 text-white">
+  <div class="container mx-auto text-center px-6">
+    <h2 class="text-3xl font-bold">{% trans "About Me" %}</h2>
+    <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+      {% blocktrans %} I am a passionate developer who enjoys creating solutions
+      that help people. I specialize in web development, using frameworks like
+      Django and FastAPI.Also, I luv machine learning and deeeeeeeeeep learning.  {% endblocktrans %}
+    </p>
+  </div>
+</section>

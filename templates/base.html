@@ -1,31 +1,22 @@
 {% load i18n %} {% load static %}
 
 <!DOCTYPE html>
-<html
-  lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}"
-  dir="{% get_current_language_bidi as LANGUAGE_BIDI %}{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}"
->
-  <html>
-    <head>
-      <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="description" content="" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-        rel="stylesheet"
-      />
-      <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-      <title>{% block title %} MADASSandD Portfolio {% endblock title %}</title>
-    </head>
-
-    {% include 'header.html' %}
-
-    <body class="bg-gray-50 text-gray-800 font-roboto">
-      {% include 'language_selector.html' %}
-      {% block index_html %} {% endblock index_html %} 
-      {% block index_script %} {%endblock index_script %}
-    </body>
-  </html>
+<html lang="{% get_current_language as LANGUAGE_CODE %}{{ LANGUAGE_CODE }}" dir="{% get_current_language_bidi as LANGUAGE_BIDI %}{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <title>{% block title %} MADASSandD Portfolio {% endblock title %}</title>
+</head>
+<body class="bg-gray-900 text-gray-200 font-roboto">
+  {% include 'header.html' %}
+  {% include 'language_selector.html' %}
+  {% block index_html %} {% endblock index_html %} 
+  {% block index_script %} {%endblock index_script %}
+</body>
 </html>

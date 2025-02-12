@@ -1,32 +1,37 @@
 {% extends 'base.html' %} {% load i18n %} {% load static %} {% block title %}
 {%trans 'HomePage' %} {%endblock title%} {% block index_html %}
 
-<body class="bg-gray-50 text-gray-800 font-roboto">
-  {% include 'app/about.html' %}
+<body class="bg-gray-900 text-gray-200 font-roboto">
+  {% include 'app/about.html' %} 
+  
+  {% include 'app/skills.html' %} 
   
   {% include 'app/projects.html' %}
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-white text-center">
+  <section id="contact" class="py-20 bg-gray-800 text-center">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800">
-        {% trans "Get in Touch" %}
-      </h2>
-      <p class="mt-4 text-lg text-gray-600">
-        {% trans "Feel free to reach out to me for collaborations or any!" %}
-        {%trans " questions" %}
+      <h2 class="text-3xl font-bold text-white">{% trans "Get in Touch" %}</h2>
+      <p class="mt-4 text-lg text-gray-400">
+        {% blocktrans %} "Feel free to reach out to me for collaborations or any
+        questions!" {% endblocktrans %}
       </p>
       <a
-        href="mailto:example@example.com"
-        class="mt-6 inline-block bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700"
-        >{% trans "Contact Me" %}</a
+        href="mailto:madassandd@gmail.com"
+        class="mt-6 inline-block bg-gray-700 text-white py-3 px-8 rounded-lg shadow-md hover:bg-gray-600 transition duration-300"
+        >{% trans "Email Me" %}</a
+      >
+      <a
+        href="https://t.me/MADASSandD"
+        class="mt-6 inline-block bg-gray-700 text-white py-3 px-8 rounded-lg shadow-md hover:bg-gray-600 transition duration-300"
+        >{% trans "Telegram Me" %}</a
       >
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-500 py-6 text-center text-white">
-    <p>&copy; 2024 ahMADASSadi. {% trans "All rights reserved." %}</p>
+  <footer class="bg-gray-900 py-6 text-center text-gray-400">
+    <p>&copy; 2024 Ahmad Asadi. {% trans "All rights reserved." %}</p>
   </footer>
 
   {% endblock index_html %}

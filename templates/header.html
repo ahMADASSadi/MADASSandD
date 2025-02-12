@@ -1,27 +1,15 @@
 {% load i18n %}
 {% load static %}
-<header class="bg-blue-500 p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="text-white text-2xl font-bold">ahMADASSadi</a>
-      <nav >
-        <ul class="flex px-2">
-          <li>
-            <a href="#about" class="text-white hover:text-gray-200 px-2"
-              >{% trans "About" %}</a
-            >
-          </li>
-          <li>
-            <a href="#projects" class="text-white hover:text-gray-200 px-2"
-              >{% trans "Projects" %}</a
-            >
-          </li>
-          <li>
-            <a href="#contact" class="text-white hover:text-gray-200 px-2"
-              >{% trans "Contact" %}</a
-            >
-          </li>
-        </ul>
-      </nav>
-      {% block header %} {% endblock header %}
-    </div>
-  </header>
+<header class="bg-gray-800 p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="#" class="text-white text-2xl font-bold">ahMADASSadi</a>
+    <nav>
+      <ul class="flex px-2">
+        <li><a href="#about" class="text-gray-300 hover:text-white px-2">{% trans "About" %}</a></li>
+        <li><a href="#projects" class="text-gray-300 hover:text-white px-2">{% trans "Projects" %}</a></li>
+        <li><a href="#contact" class="text-gray-300 hover:text-white px-2">{% trans "Contact" %}</a></li>
+      </ul>
+    </nav>
+    {% block header %} {% endblock header %}
+  </div>
+</header>
