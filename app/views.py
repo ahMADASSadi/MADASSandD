@@ -1,26 +1,20 @@
 import requests
-import pprint
 
-from django.views.generic import TemplateView, ListView
-from django.shortcuts import render
-from django.conf import settings
-from django.http import Http404
+from django.views.generic import TemplateView
 from django.core.cache import cache
 
 # Create your views here.
 
 
 class HomeGitHubView(TemplateView):
-    template_name = "app/index.html"  # The template for the home page
+    template_name = "app/index.html"
 
     def get_context_data(self, **kwargs):
         profile_key = "profile"
         repo_key = "repo"
         context = super().get_context_data(**kwargs)
 
-        github_username = "ahMADASSadi"  # Your GitHub username
-        # Ensure this token is added securely in your settings
-        github_token = settings.GITHUB_TOKEN
+        github_username = "ahMADASSadi"
 
         url = f'https://api.github.com/users/{github_username}'
         repo_url = url+'/repos'
@@ -54,14 +48,14 @@ class HomeGitHubView(TemplateView):
         repos_info = cache.get(repo_key)
         if repos_info is None:
             try:
-                response = requests.get(repo_url, auth=("username", github_token), timeout=1)
+                response = requests.get(repo_url,timeout=1)
                 response.raise_for_status()
                 data = response.json()
                 repos_info = [
                     {
                         'name': repo.get('name'),
                         'description': repo.get('description'),
-                        'url': f"http://github.com/{github_username}/{repo.get('name')}"
+                        'url': repo.get('html_url')
                     }
                     for repo in data if repo.get('description')
                 ]
