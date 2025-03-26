@@ -48,7 +48,7 @@ class HomeGitHubView(TemplateView):
         repos_info = cache.get(repo_key)
         if repos_info is None:
             try:
-                response = requests.get(repo_url,timeout=1)
+                response = requests.get(repo_url, timeout=1)
                 response.raise_for_status()
                 data = response.json()
                 repos_info = [
@@ -67,5 +67,19 @@ class HomeGitHubView(TemplateView):
                 context['repos'] = None
 
         context['repos'] = repos_info
+
+        skills = [
+            {"name": "Python", "color": "#3776AB"},
+            {"name": "Django", "color": "#092E20"},
+            {"name": "Django RestAPI", "color": "#EF4444"},
+            {"name": "FastAPI", "color": "#009688"},
+            {"name": "PostgreSQL", "color": "#4169E1"},
+            {"name": "MongoDB", "color": "#00533B"},
+            {"name": "Celery", "color": "#A9CC54","text_color":"gray-900"},
+            {"name": "Redis", "color": "#AA0A00"},
+            {"name": "Docker", "color": "#328EEF"},
+            {"name": "RabbitMQ", "color": "#FF8C00"},
+        ]
+        context['skills'] = skills
 
         return context
