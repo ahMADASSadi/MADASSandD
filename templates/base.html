@@ -11,6 +11,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="shortcut icon" href="{{user_info.avatar_url}}" type="image/x-icon">
   <title>{% block title %} MADASSandD Portfolio {% endblock title %}</title>
 </head>
 <body class="bg-gray-900 text-gray-200 font-roboto">
@@ -18,5 +19,8 @@
   {% include 'language_selector.html' %}
   {% block index_html %} {% endblock index_html %} 
   {% block index_script %} {%endblock index_script %}
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-4 right-4 p-2 bg-gray-600 text-white rounded-full">
+    ↑
+  </button>
 </body>
 </html>

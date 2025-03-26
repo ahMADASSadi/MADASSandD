@@ -2,57 +2,26 @@
 <section id="skills" class="py-8 bg-gray-900">
   <div class="container mx-auto text-center">
     <h2 class="text-3xl font-semibold mb-6 text-white">
-      {% trans "My Skills" %}
+      {% trans "My Tools" %}
     </h2>
     <p class="text-lg text-gray-400 mb-8">
       {% trans "Technologies I specialize in:" %}
     </p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full  p-6">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full p-6"
+    >
       <!-- Skill Card -->
-      <div class="bg-gray-700 p-4 rounded-lg shadow-md">
-          <div class="flex items-center justify-between">
-              <span class="text-lg font-semibold">Python</span>
-              <div class="w-2/3 bg-gray-900 rounded-lg h-6">
-                  <div class="bg-[#3776AB] h-6 rounded-lg" style="width: 90%;"></div>
-              </div>
-          </div>
+      {% for skill in skills %} 
+      <div class="bg-gray-700 p-2 rounded-lg shadow-md bg-[{{skill.color}}]">
+        {% if skill.text_color %} 
+        <span class="text-lg font-semibold text-{{skill.text_color}} px-2 py-1 rounded">
+        {% else %} 
+        <span class="text-lg font-semibold text-white px-2 py-1 rounded">
+        {% endif %}
+            {{skill.name}}
+        </span>
       </div>
-
-      <div class="bg-gray-700 p-4 rounded-lg shadow-md">
-          <div class="flex items-center justify-between">
-              <span class="text-lg font-semibold">Django</span>
-              <div class="w-2/3 bg-gray-900 rounded-lg h-6">
-                  <div class="bg-[#092E20] h-6 rounded-lg" style="width: 85%;"></div>
-              </div>
-          </div>
-      </div>
-
-      <div class="bg-gray-700 p-4 rounded-lg shadow-md">
-          <div class="flex items-center justify-between">
-              <span class="text-sm font-semibold">Django RestAPI</span>
-              <div class="w-2/3 bg-gray-900 rounded-lg h-6">
-                  <div class="bg-red-500 h-6 rounded-lg" style="width: 70%;"></div>
-              </div>
-          </div>
-      </div>
-
-      <div class="bg-gray-700 p-4 rounded-lg shadow-md">
-          <div class="flex items-center justify-between">
-              <span class="text-lg font-semibold">FastAPI</span>
-              <div class="w-2/3 bg-gray-900 rounded-lg h-6">
-                  <div class="bg-[#009688] h-6 rounded-lg" style="width: 60%;"></div>
-              </div>
-          </div>
-      </div>
-
-      <div class="bg-gray-700 p-4 rounded-lg shadow-md">
-          <div class="flex items-center justify-between">
-              <span class="text-lg font-semibold">PostgreSQL</span>
-              <div class="w-2/3 bg-gray-900 rounded-lg h-6">
-                  <div class="bg-[#4169E1] h-6 rounded-lg" style="width: 95%;"></div>
-              </div>
-          </div>
-      </div>
-  </div>
+      {%endfor%}
+    </div>
   </div>
 </section>
