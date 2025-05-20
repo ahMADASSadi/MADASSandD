@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% load i18n %} {% load static %} {% block title %}
+{%trans 'HomePage' %} {%endblock title%} {% block index_html %}
+
+<body class="bg-gray-900 text-gray-200 font-roboto">
+  {% include 'app/about.html' %} 
+    
+  {% include 'app/projects.html' %}
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-800 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-white">{% trans "Get in Touch" %}</h2>
+      <p class="mt-4 text-lg text-gray-400">
+        {% blocktrans %} "Feel free to reach out to me for collaborations or any
+        questions!" {% endblocktrans %}
+      </p>
+      <a
+        href="mailto:madassandd@gmail.com"
+        class="mt-6 inline-block bg-red-700 text-white py-3 px-8 rounded-lg shadow-md hover:bg-red-600 transition duration-300"
+        >{% trans "Email" %}</a
+      >
+      <a
+        href="https://t.me/MADASSandD"
+        class="mt-6 inline-block bg-blue-700 text-white py-3 px-8 rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+        >{% trans "Telegram" %}</a
+      >
+      <a
+      href="https://x.com/MADASSandD"
+      class="mt-6 inline-block bg-gray-700 text-white py-3 px-8 rounded-lg shadow-md hover:bg-gray-600 transition duration-300"
+      >{% trans "X" %}</a
+      >
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-400">
+    <p>&copy; 2024 Ahmad Asadi. {% trans "No rights reserved. It's an open-source world <3" %}</p>
+  </footer>
+
+  {% endblock index_html %}
+</body>

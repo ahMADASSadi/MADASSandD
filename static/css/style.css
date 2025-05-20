@@ -1,4 +1,3 @@
-
 body:dir(rtl) {
   direction: rtl;
   text-align: right;
@@ -9,4 +8,118 @@ body:dir(ltr) {
   direction: ltr;
   text-align: left;
   /* Add other LTR-specific styles as needed */
+}
+
+:root {
+  --accent-color: #00b4d8; /* Teal */
+  --dark-bg: #1a1a1a;
+  --dark-text: #ffffff;
+  --light-bg: #ffffff;
+  --light-text: #333333;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+.light {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+.nav-opaque {
+  background-color: rgba(26, 26, 26, 0.8); /* Dark mode nav bg */
+  backdrop-filter: blur(10px);
+}
+.light .nav-opaque {
+  background-color: rgba(255, 255, 255, 0.8); /* Light mode nav bg */
+}
+.accent-text {
+  color: var(--accent-color);
+}
+.accent-bg {
+  background-color: var(--accent-color);
+}
+.accent-border {
+  border-color: var(--accent-color);
+}
+
+/* Typewriter effect */
+.typewriter h1 {
+  overflow: hidden;
+  border-right: 0.15em solid var(--accent-color);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.05em;
+  animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--accent-color);
+  }
+}
+
+/* Fade-in animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.form-input {
+  background-color: transparent;
+  border: 1px solid;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  width: 100%;
+}
+.dark .form-input {
+  border-color: #4b5563; /* gray-600 */
+  color: var(--dark-text);
+}
+.light .form-input {
+  border-color: #d1d5db; /* gray-300 */
+  color: var(--light-text);
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.5);
+}
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #2d3748; /* gray-800 */
+}
+.light ::-webkit-scrollbar-track {
+  background: #e2e8f0; /* gray-200 */
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #009ac0;
 }

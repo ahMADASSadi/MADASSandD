@@ -1,38 +1,34 @@
 {% load i18n %} {% load static %}
-<section class="bg-gray-900 py-20 text-center text-white">
-  <div class="container mx-auto px-6">
-    <div class="max-w-lg mx-auto bg-gray-800 p-8 rounded-lg shadow-lg">
-      <img
-        class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-gray-700 shadow-md"
-        src="{{ user_info.avatar_url }}"
-        alt="Profile Picture"
-      />
-      <h1 class="text-4xl font-extrabold mt-4">
-        {% trans "Welcome to My Portfolio" %}
-      </h1>
-      <h2 class="text-xl font-semibold text-gray-400 mt-2">
-        {{ user_info.bio }}
-      </h2>
-      <p class="mt-4 text-lg text-gray-300">
-        {% blocktranslate %} Hi there! I'm Ahmad Asadi, a passionate developer
-        and open-source enthusiast. {% endblocktranslate %}
-      </p>
-      <a
-        href="{{ user_info.html_url }}"
-        class="mt-6 inline-block bg-gray-700 text-white py-3 px-8 rounded-lg shadow-md hover:bg-gray-600 transition duration-300"
-        >{% trans "Check out my GitHub" %}</a
-      >
-    </div>
-  </div>
-</section>
 
-<section id="about" class="py-20 bg-gray-800 text-white">
-  <div class="container mx-auto text-center px-6">
-    <h2 class="text-3xl font-bold">{% trans "About Me" %}</h2>
-    <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-      {% blocktrans %} I am a passionate developer who enjoys creating solutions
-      that help people. I specialize in web development, using frameworks like
-      Django and FastAPI.Also, I luv machine learning and deeeeeeeeeep learning.  {% endblocktrans %}
-    </p>
+<section id="about" class="py-20 lg:py-32 px-6 fade-in-section">
+  <div class="container mx-auto max-w-4xl">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+      {% trans "About Me" %}<span class="accent-text">.</span>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-10 items-center">
+      <div class="md:col-span-1 flex justify-center">
+        <img
+          src="{{ user_info.avatar_url }}"
+          alt="Professional Headshot"
+          class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover shadow-xl border-4 accent-border"
+        />
+      </div>
+      <div class="md:col-span-2">
+        <p class="text-lg opacity-90 mb-6 leading-relaxed">
+          {% blocktrans %} I am a passionate developer who enjoys creating
+          solutions that help people. I specialize in web development, using
+          frameworks like Django and FastAPI.Also, I luv machine learning and
+          deeeeeeeeeep learning. {% endblocktrans %}
+        </p>
+        <h3 class="text-xl font-semibold mb-4">{{ user_info.bio }}</h3>
+        {% for skill in skills %}
+        <div
+          class="flex items-center gap-2 text-sm font-medium py-2 px-4 rounded-full border border-gray-600 dark:border-gray-400 dark:bg-gray-700 bg-gray-100"
+        >
+          <span class="h-5 w-5 accent-text"> {{skill.name}} </span>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
   </div>
 </section>
