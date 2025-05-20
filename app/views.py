@@ -53,9 +53,11 @@ class HomeGitHubView(TemplateView):
                 data = response.json()
                 repos_info = [
                     {
-                        'name': repo.get('name'),
+                        'id': repo.get('id'),
+                        'title': repo.get('name'),
                         'description': repo.get('description'),
-                        'url': repo.get('html_url')
+                        'technologies': 'N/A',  # Or parse from topics if available
+                        'githubLink': repo.get('html_url')
                     }
                     for repo in data if repo.get('description')
                 ]
@@ -75,7 +77,7 @@ class HomeGitHubView(TemplateView):
             {"name": "FastAPI", "color": "#009688"},
             {"name": "PostgreSQL", "color": "#4169E1"},
             {"name": "MongoDB", "color": "#00533B"},
-            {"name": "Celery", "color": "#A9CC54","text_color":"gray-900"},
+            {"name": "Celery", "color": "#A9CC54", "text_color": "gray-900"},
             {"name": "Redis", "color": "#AA0A00"},
             {"name": "Docker", "color": "#328EEF"},
             {"name": "RabbitMQ", "color": "#FF8C00"},
