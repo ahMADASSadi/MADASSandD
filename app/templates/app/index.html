@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - [Your Name]</title>
+    <title>Ahmad Asadi</title>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -135,6 +135,7 @@
   <body>
     <div id="root"></div>
 
+{% comment %}       
     <div
       class="fixed top-4 right-4 bg-gray-800 text-right rounded-lg shadow-lg mt-[50px] z-10"
     >
@@ -175,7 +176,7 @@
           <input type="hidden" name="language" id="language" value="en-us" />
         </div>
       </form>
-    </div>
+    </div> {% endcomment %}
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -213,7 +214,7 @@
                         const { useState, useEffect, useRef } = React;
 
                         // Placeholder Data
-                        const YOUR_NAME = "ahMAD";
+                        const YOUR_NAME = "Ahmad";
                         const YOUR_EMAIL = "MADASSandD@gmail.com" ;
                         const HERO_TAGLINE = "I build modern web applications.";
                         const ABOUT_BIO = "{% blocktrans %} I am a passionate developer who enjoys creating solutions that help people. I specialize in web development, using frameworks like Django and FastAPI.Also, I luv machine learning and deeeeeeeeeep learning. {% endblocktrans %}"

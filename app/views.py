@@ -6,7 +6,7 @@ from django.core.cache import cache
 # Create your views here.
 
 
-class HomeGitHubView(TemplateView):
+class HomeView(TemplateView):
     template_name = "app/index.html"
 
     def get_context_data(self, **kwargs):
@@ -16,8 +16,8 @@ class HomeGitHubView(TemplateView):
 
         github_username = "ahMADASSadi"
 
-        url = f'https://api.github.com/users/{github_username}'
-        repo_url = url+'/repos'
+        url = f"https://api.github.com/users/{github_username}"
+        repo_url = url + "/repos"
 
         user_info = cache.get(profile_key)
         if user_info is None:
@@ -27,23 +27,21 @@ class HomeGitHubView(TemplateView):
                 data = response.json()
 
                 user_info = {
-                    'login': data.get('login'),
-                    'name': data.get('name'),
-                    'bio': data.get('bio'),
-                    'email': data.get('email'),
-                    'avatar_url': data.get('avatar_url'),
-                    'html_url': data.get('html_url'),
+                    "login": data.get("login"),
+                    "name": data.get("name"),
+                    "bio": data.get("bio"),
+                    "email": data.get("email"),
+                    "avatar_url": data.get("avatar_url"),
+                    "html_url": data.get("html_url"),
                 }
 
-                cache.set(profile_key, user_info, timeout=60*10)
+                cache.set(profile_key, user_info, timeout=60 * 10)
 
             except requests.exceptions.RequestException as e:
                 print(f"Error fetching GitHub profile data: {e}")
-            user_info = {
-                'error': 'Could not retrieve GitHub profile data'
-            }
+            user_info = {"error": "Could not retrieve GitHub profile data"}
 
-        context['user_info'] = user_info
+        context["user_info"] = user_info
 
         repos_info = cache.get(repo_key)
         if repos_info is None:
@@ -53,22 +51,22 @@ class HomeGitHubView(TemplateView):
                 data = response.json()
                 repos_info = [
                     {
-                        'id': repo.get('id'),
-                        'title': repo.get('name'),
-                        'description': repo.get('description'),
-                        'technologies': 'N/A',  # Or parse from topics if available
-                        'githubLink': repo.get('html_url')
+                        "id": repo.get("id"),
+                        "title": repo.get("name"),
+                        "description": repo.get("description"),
+                        "technologies": "N/A",  # Or parse from topics if available
+                        "githubLink": repo.get("html_url"),
                     }
-                    for repo in data if repo.get('description')
+                    for repo in data
+                    if repo.get("description")
                 ]
 
-                cache.set(repo_key, repos_info, timeout=60*10)
+                cache.set(repo_key, repos_info, timeout=60 * 10)
 
-            except requests.exceptions.RequestException as e:
+            except requests.exceptions.RequestException:
+                context["repos"] = None
 
-                context['repos'] = None
-
-        context['repos'] = repos_info
+        context["repos"] = repos_info
 
         skills = [
             {"name": "Python", "color": "#3776AB"},
@@ -82,6 +80,5 @@ class HomeGitHubView(TemplateView):
             {"name": "Docker", "color": "#328EEF"},
             {"name": "RabbitMQ", "color": "#FF8C00"},
         ]
-        context['skills'] = skills
-
+        context["skills"] = skills
         return context
